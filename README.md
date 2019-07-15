@@ -76,3 +76,44 @@ public class BookRepositoryImpl implements BookRepository {
 
 
 ```
+
+
+```
+扩展:
+
+@Caching
+
+有时候我们可能组合多个Cache注解使用；比如用户新增成功后，我们要添加id–>user；username—>user；email—>user的缓存；此时就需要@Caching组合多个注解标签了。
+
+@Caching(put = {
+@CachePut(value = "user", key = "#user.id"),
+@CachePut(value = "user", key = "#user.username"),
+@CachePut(value = "user", key = "#user.email")
+})
+public User save(User user) {
+
+
+=======================================================
+
+自定义缓存注解
+
+比如之前的那个@Caching组合，会让方法上的注解显得整个代码比较乱，此时可以使用自定义注解把这些注解组合到一个注解中，如：
+
+@Caching(put = {
+@CachePut(value = "user", key = "#user.id"),
+@CachePut(value = "user", key = "#user.username"),
+@CachePut(value = "user", key = "#user.email")
+})
+@Target({ElementType.METHOD, ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Inherited
+public @interface UserSaveCache {
+}
+
+这样我们在方法上使用如下代码即可，整个代码显得比较干净。
+
+@UserSaveCache
+public User save(User user)
+
+
+```
