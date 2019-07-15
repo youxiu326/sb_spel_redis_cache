@@ -57,3 +57,25 @@ public String save(String id, String value) {
 @Cacheable和@Cacheput都会将方法的执行结果按指定的key放到缓存中，@Cacheable在执行时，会先检测缓存中是否有数据存在，如果有，直接从缓存中读取。如果没有，执行方法，将返回值放入缓存，而@Cacheput会先执行方法，然后再将执行结果写入缓存。使用@Cacheput的方法一定会执行
 
 ```
+
+
+```
+
+@CacheConfig 注解
+
+所有的@Cacheable（）里面都有一个value＝“xxx”的属性，这显然如果方法多了，
+写起来也是挺累的，如果可以一次性声明完 那就省事了，
+所以，有了@CacheConfig这个配置，
+@CacheConfig is a class-level annotation that allows to share the cache names，
+如果你在你的方法写别的名字，那么依然以方法的名字为准。
+
+@CacheConfig("books")
+public class BookRepositoryImpl implements BookRepository {
+
+  @Cacheable
+  public Book findBook(ISBN isbn) {...}
+
+}
+
+
+```
