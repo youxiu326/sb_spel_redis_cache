@@ -1,15 +1,11 @@
 
 ###### 使用redis 测试spring cache
 
-
 <br>
-参考简书:https://www.jianshu.com/p/fc076b6c2a13?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation
+[参考简书](https://www.jianshu.com/p/fc076b6c2a13?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation "悬停显示")
 <br>
-参考脚本之家:https://www.jb51.net/article/112849.htm
+[参考脚本之家](https://www.jb51.net/article/112849.htm "悬停显示")
 <br>
-
-
-
 ```
 
 缓存
