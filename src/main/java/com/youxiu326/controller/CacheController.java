@@ -45,7 +45,7 @@ public class CacheController {
     }
 
     /**
-     * 跟新某个ID的信息
+     * 更新某个ID的信息
      *
      * @param id
      * @return

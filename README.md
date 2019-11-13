@@ -117,3 +117,8 @@ public User save(User user)
 
 
 ```
+
+[Springboot线程池服务实战分享](https://yq.aliyun.com/articles/710450?spm=a2c4e.11153940.0.0.3a2d19e5h6RyIG)
+<br><br>
+
+
